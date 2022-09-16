@@ -1,0 +1,21 @@
+.result {
+  margin: 0 auto;
+  width: 110rem;
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 4.5rem;
+  margin-bottom: 1rem;
+}
+
+.sub-title {
+  font-size: 2.5rem;
+  font-weight: 200;
+}
+
+.result p {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}

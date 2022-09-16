@@ -1,0 +1,40 @@
+.new-quiz {
+  margin: 0 auto;
+  width: 65rem;
+  margin-top: 4rem;
+}
+
+.new-quiz h3 {
+  font-size: 2.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+select {
+  padding: 1rem 1.5rem;
+  border-radius: 7px;
+  border: none;
+}
+
+.form-group label {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 1.5rem 0rem;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}

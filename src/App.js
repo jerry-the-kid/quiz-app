@@ -1,24 +1,42 @@
-import logo from './logo.svg';
+import { useSelector, useDispatch } from 'react-redux';
+import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+
+import Layout from './components/UI/Layout';
+import NewQuiz from './pages/NewQuiz';
+import CurrentQuiz from './pages/CurrentQuiz';
+import ResultPage from './pages/ResultPage';
+import LoadingSpinner from './components/UI/LoadingSpinner';
+import { getQuizData } from './store/quiz-actions';
+
 import './App.css';
 
 function App() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const showSpinner = useSelector((state) => state.ui.showSpinner);
+  const data = useSelector((state) => state.quiz.data);
+
+  const getQuiz = async (url) => {
+    dispatch(getQuizData(url));
+    navigate('/quizzes');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Layout>
+        {showSpinner && <LoadingSpinner />}
+        {!showSpinner && (
+          <Routes>
+            <Route path='/' element={<NewQuiz onSubmitForm={getQuiz} />} />
+            <Route
+              path='/quizzes'
+              element={data ? <CurrentQuiz /> : <Navigate replace to='/' />}
+            />
+            <Route path='/result' element={<ResultPage />} />
+          </Routes>
+        )}
+      </Layout>
+    </>
   );
 }
 

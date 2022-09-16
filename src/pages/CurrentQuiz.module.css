@@ -1,0 +1,33 @@
+.current-quiz {
+  margin: 0 auto;
+  width: 110rem;
+  margin-top: 3.5rem;
+}
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-position {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+.answers {
+  width: 90%;
+  margin: 1rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2.5rem;
+}
